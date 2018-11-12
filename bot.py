@@ -109,7 +109,7 @@ def delete_message(bot, update):
 def is_call_available(name, chat_id, cooldown):
     global last_function_calls
     now = datetime.datetime.now()
-    cooldown_time = datetime.datetime.now() - datetime.timedelta(minutes=cooldown)
+    cooldown_time = datetime.datetime.now() - datetime.timedelta(seconds=cooldown)
     if name in last_function_calls.keys():
         if chat_id in last_function_calls[name].keys():
             if last_function_calls[name][chat_id] > cooldown_time:
